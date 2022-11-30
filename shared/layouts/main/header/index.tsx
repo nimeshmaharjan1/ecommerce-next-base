@@ -1,8 +1,7 @@
 import React from 'react';
 import ThemeToggler from '@shared/components/theme-toggler';
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
-import { AppBar, Box, Container, Toolbar, Typography, useScrollTrigger } from '@mui/material';
-import Link from 'next/link';
+import { AppBar, Box, Container, Link, Toolbar, Typography, useScrollTrigger } from '@mui/material';
 
 interface Props {
   /**
@@ -37,9 +36,26 @@ const Header = () => {
             <Grid container alignItems={'center'} py={1}>
               <Grid xs={2}>Title</Grid>
               <Grid container xs={8} justifyContent={'space-around'}>
-                <Link href="£">Hello</Link>
-                <Link href="£">Hello</Link>
-                <Link href="£">Hello</Link>
+                <Link
+                  component="button"
+                  variant="body2"
+                  underline="hover"
+                  onClick={() => {
+                    console.info("I'm a button.");
+                  }}
+                >
+                  Home
+                </Link>
+                <Link
+                  component="button"
+                  variant="body2"
+                  underline="hover"
+                  onClick={() => {
+                    console.info("I'm a button.");
+                  }}
+                >
+                  Products
+                </Link>
               </Grid>
               <Grid xs={2} container justifyContent="center">
                 <ThemeToggler></ThemeToggler>
